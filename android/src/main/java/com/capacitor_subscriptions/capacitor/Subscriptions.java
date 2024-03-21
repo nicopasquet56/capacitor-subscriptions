@@ -211,6 +211,7 @@ public class Subscriptions {
                             data.put("productIdentifier", currentPurchaseHistoryRecord.get("productId"));
                             data.put("originalId", currentPurchaseHistoryRecord.get("orderId"));
                             data.put("transactionId", currentPurchaseHistoryRecord.get("orderId"));
+                            data.put("purchaseToken", currentPurchaseHistoryRecord.get("purchaseToken").toString());
 
                             response.put("responseCode", 0);
                             response.put("responseMessage", "Successfully found the latest transaction matching given productIdentifier");

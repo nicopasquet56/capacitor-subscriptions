@@ -229,6 +229,8 @@ import UIKit
             print("transaction.expirationDate", transaction.expirationDate)
             print("transaction.originalID", transaction.originalID);
             
+            let receiptString = "";
+            
             if let appStoreReceiptURL = Bundle.main.appStoreReceiptURL,
                 FileManager.default.fileExists(atPath: appStoreReceiptURL.path) {
 
@@ -238,7 +240,7 @@ import UIKit
                     print("Receipt Data: ", receiptData)
 
 
-                    let receiptString = receiptData.base64EncodedString(options: [Data.Base64EncodingOptions.endLineWithCarriageReturn])
+                    receiptString = receiptData.base64EncodedString(options: [Data.Base64EncodingOptions.endLineWithCarriageReturn])
                     print("Receipt String: ", receiptString)
 
 
@@ -256,7 +258,8 @@ import UIKit
                     "originalStartDate": transaction.originalPurchaseDate,
                     "originalId": transaction.originalID,
                     "transactionId": transaction.id,
-                    "expiryDate": transaction.expirationDate
+                    "expiryDate": transaction.expirationDate,
+                    "purchaseToken": receiptString
                 ]
             ];
             
