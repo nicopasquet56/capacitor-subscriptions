@@ -168,6 +168,7 @@ import UIKit
                         "originalId": transaction!.originalID,
                         "transactionId": transaction!.id,
                         "expiryDate": transaction!.expirationDate
+                        "purchaseToken": ""
                     ]
                     
                 }
@@ -229,7 +230,7 @@ import UIKit
             print("transaction.expirationDate", transaction.expirationDate)
             print("transaction.originalID", transaction.originalID);
             
-            let receiptString = "";
+            var receiptString = "";
             
             if let appStoreReceiptURL = Bundle.main.appStoreReceiptURL,
                 FileManager.default.fileExists(atPath: appStoreReceiptURL.path) {

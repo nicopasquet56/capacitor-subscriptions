@@ -284,6 +284,7 @@ public class Subscriptions {
                                                         .put("originalStartDate", simpleDateFormat.format(calendar.getTime()))
                                                         .put("originalId", orderId)
                                                         .put("transactionId", orderId)
+                                                        .put("purchaseToken",currentPurchase.getPurchaseToken())
                                         );
                                     // }
                                 }
